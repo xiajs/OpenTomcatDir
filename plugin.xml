@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="OpenTomcatDir.actionSet"
+            label="OpenTomcatDir Action Set"
+            visible="true">
+         <action
+               class="opentomcatdir.actions.OpenTomcatDirAction"
+               icon="icons/TomcatDir.jpg"
+               id="opentomcatdir.actions.OpenTomcatDir"
+               label="&amp;OpenTomcatDir Action"
+               toolbarPath="OpenTomcatDir"
+               tooltip="Open Tomcat Dir">
+         </action>
+      </actionSet>
+   </extension>
+  <!-- 
+   <extension
+         point="org.eclipse.ui.popupMenus">
+         <objectContribution
+            objectClass="org.eclipse.core.runtime.IAdaptable"
+            id="OpenTomcatDir.popupMenuContribution">
+         <action
+               label="Open Tomcat Dir"
+               icon="icons/TomcatDir.jpg"
+               class="opentomcatdir.actions.OpenTomcatDirPopupAction"
+               menubarPath="additions"
+               enablesFor="*"
+               id="OpenTomcatDir.popupMenuAction">
+         </action>
+      </objectContribution>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Open Tomcat Dir"
+            class="opentomcatdir.preferences.MainPreferencePage"
+            id="opentomcatdir.preferences.MainPreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="opentomcatdir.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+</plugin>
